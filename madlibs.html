@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+  <meta charset="utf-8">
+  <title>Mad Libs</title>
+</head>
+
+<body>
+  <h5>Boy's Name</h5>
+  <input type="text" ng-model="boy">
+  <h5>Adjective</h5>
+  <input type="text" ng-model="adjective">
+  <h5>Plural Noun</h5>
+  <input type="text" ng-model="nounOne">
+  <h5>Plural Noun</h5>
+  <input type="text" ng-model="nounTwo">
+  <h5>An insect, plural</h5>
+  <input type="text" ng-model="insect">
+  <h5>Plural Noun</h5>
+  <input type="text" ng-model="nounThree">
+  <h5>A verb ending in 's'</h5>
+  <input type="text" ng-model="verb">
+
+  <h3>Mad with the Libs</h3>
+
+  <p>I'm in love with {{boy}}. He's so {{adjective}}! He has big flat {{nounOne}},
+    and when our {{nounTwo}} meet, I get {{insect}} in my stomach. I've fallen for
+    him like a ton of {{nounThree}}, and he {{verb}} me, too.</p>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+
+</html>
