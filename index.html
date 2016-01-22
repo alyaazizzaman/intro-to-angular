@@ -28,6 +28,27 @@
       <option value="neither">neither</option>
     </select>
     <h3>I &#60;3 {{pets}}</h3>
+    <p>How many digits of pi do you want?<select name="pi" ng-model="digits"></p>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+    </select>
+    <p>Here you go! The first {{digits}} digits of pi!</p>
+    <p>{{3.14159265359 | number: digits}}</p>
+    <h3>Super Useful Tip Calculator</h3>
+    <p>How much did your meal cost? <input type="text" ng-model="cost"></p>
+    <p>How much do you want to tip?</p>
+    <select name="tip" ng-model="percentage">
+      <option value="0.1">10%</option>
+      <option value="0.15">20%</option>
+      <option value="0.2">30%</option>
+    </select>
+    <h4>Subtotal: {{cost | currency}}</h4>
+    <h4>Tip: {{cost*percentage | currency}}</h4>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
   </body>
