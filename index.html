@@ -6,8 +6,19 @@
   </head>
   <body>
     <p>{{1 + 6}}</p>
+    <p>{{3.14159265359 | currency: "€"}}</p>
+    <p>{{3.14159265359 | number: 6}}</p>
+    <p>{{3.14159265359 | number: 3}}</p>
+    <p>{{3.14159265359 | number: 1}}</p>
+    <p>Please say something</p>
+    <p><input type="text" ng-model="something"></p>
+    <p>Yelling: {{something | lowercase}} </p>
+    <p>Whispering: {{something | uppercase}}</p>
     <p>Say something to the world <input type="text" ng-model="greeting" ng-init="greeting='Hello, '"></p>
     <p>{{ greeting }} world! </p>
+    <p>1+2 = {{1+2}}</p>
+    <p>My name is {{"Tim" + " the" + " Tiny" + " Turtle"}}</p>
+    <p>The array [99,43,22] is {{ [99,43,22].length }} items long</p>
     <input type="text" placeholder="What is your name?" ng-model="name">
     <h1>My name is: {{name}}</h1>
     <select name="select" ng-model="pets">
