@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css"
+</head>
+
+<body ng-init="people={'Alya':30, 'Sonya':28, 'Kacie':30}">
+
+  <ul>
+    <li ng-repeat="(name, age) in people">
+      {{ name }}:{{ age }}
+    </li>
+  </ul>
+
+  <div ng-show='3 + 4 == 5'>
+    3 + 4 isn't 5, don't show
+  </div>
+
+  <div ng-show='3 + 4 == 7'>
+    3 + 4 is 7, do show
+  </div>
+
+  <div ng-hide='3 + 4 == 5'>
+    3 + 4 isn't 5, don't hide
+  </div>
+
+  <div ng-hide='3 + 4 == 7'>
+    3 + 4 is 7, do hide
+  </div>
+
+  <div>
+    <input type="text" ng-model="password">
+    <p ng-class='{red: password.length < 6, green: password.length >= 6}'>Your password is {{password.length}} characters</p>
+    <button ng-hide="password.length < 6" ng-show="password.length >=6">Submit</button>
+  </div>
+
+  <div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8 </div>
+  <div ng-class='{highlight: 4 + 4 == 10}'> 4 + 4 = 10 </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+
+</html>
