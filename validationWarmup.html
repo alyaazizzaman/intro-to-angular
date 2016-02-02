@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+
+  <form name="myForm">
+
+    <label>
+      <strong>Full Name</strong>
+      <input type="text" name="fullname" ng-model="fullname" placeholder="required" ng-minlength="2" required>
+    </label>
+    <p ng-show='myForm.fullname.$error.minlength'>You must enter a name</p>
+
+
+  <br><br>
+
+    <label>
+      <strong>Username</strong>
+      <input type="text" name="username" ng-model="username" placeholder="required" ng-minlength="6" required>
+    </label>
+    <p ng-show='myForm.username.$error.minlength'>Your username must be 6 or more characters</p>
+
+  <br><br>
+
+    <label>
+      <strong>Email</strong>
+      <input type="email" name="email" ng-model="email" placeholder="required" ng-pattern="/^\S+@\S+\.\S+$/" required>
+    </label>
+    <p ng-show='myForm.email.$error.pattern'>You must enter a valid email</p>
+
+  <br><br>
+
+    <label>
+      <strong>Age</strong>
+      <input type="number" ng-model="age" placeholder="required" min="0" required>
+    </label>
+
+  <br><br>
+
+  <input type="submit" id="submit" value="Submit" ng-disabled="myForm.$invalid"/>
+
+</form>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+
+</html>

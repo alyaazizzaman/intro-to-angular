@@ -34,7 +34,7 @@
   <div>
     <input type="text" ng-model="password">
     <p ng-class='{red: password.length < 6, green: password.length >= 6}'>Your password is {{password.length}} characters</p>
-    <button ng-hide="password.length < 6" ng-show="password.length >=6">Submit</button>
+    <button ng-hide="password.length < 6" ng-show="password.length >= 6">Submit</button>
   </div>
 
   <div ng-class='{highlight: 4 + 4 == 8}'> 4 + 4 = 8 </div>
