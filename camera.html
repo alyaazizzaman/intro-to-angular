@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html ng-app>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body ng-init="cameras=[
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-init="cameras=[
   {
     title: 'Nikon D3100 DSLR',
     image: 'http://ecx.images-amazon.com/images/I/713u2gDQqML._SX522_.jpg',
@@ -27,17 +30,29 @@
     onSale: true
   }
 ]">
-    <h1>Camera Shop</h1>
-    <select name="sort">
-      <option value='rating'>Rating</option>
-      <option value='price'>Price</option>
-    </select>
+  <h1>Camera Shop</h1>
 
-    <ul>
-      <li ng-repeat="camera in cameras">{{camera}}</li>
-    </ul>
+  <select name="sort" ng-model="sortBy">
+    <option value='-rating'>Rating</option>
+    <option value='price'>Price</option>
+  </select>
 
+  <ul>
+    <li ng-repeat="camera in cameras | orderBy:sortBy">
+      <ul>
+        <li>{{camera.title}}</li>
+        <li ng-class='{sale: camera.onSale}'>Price: {{camera.price | currency}}
+          <div ng-show='camera.onSale'>On Sale!!</div>
+        </li>
+        <li>Rating: {{camera.rating}}</li>
+        <li>
+          <img height=50px width=auto src="{{camera.image}}">
+        </li>
+      </ul>
+    </li>
+  </ul>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</body>
+
 </html>

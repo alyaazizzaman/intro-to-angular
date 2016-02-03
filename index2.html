@@ -4,10 +4,12 @@
 <head>
   <meta charset="utf-8">
   <title></title>
-  <link rel="stylesheet" href="style.css"
+  <link rel="stylesheet" href="style.css">
 </head>
 
-<body ng-init="people={'Alya':30, 'Sonya':28, 'Kacie':30}">
+<body ng-init="symbols=['&spades;', '&clubs;', '&hearts;', '&diams;']">
+<!-- <body ng-init="people={'Alya':30, 'Sonya':28, 'Kacie':30}"> -->
+
 
   <ul>
     <li ng-repeat="(name, age) in people">
@@ -32,8 +34,16 @@
   </div>
 
   <div>
+    <ul>
+      <li ng-repeat="symbol in symbols">
+        {{symbol}}
+      </li>
+  </div>
+
+  <div>
     <input type="text" ng-model="password">
     <p ng-class='{red: password.length < 6, green: password.length >= 6}'>Your password is {{password.length}} characters</p>
+    <p ng-show="password.length < 6" ng-hide="password.length >=6">You password in invalid</p>
     <button ng-hide="password.length < 6" ng-show="password.length >= 6">Submit</button>
   </div>
 
